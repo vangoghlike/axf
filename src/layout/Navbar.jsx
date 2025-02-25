@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import useOnclickOutside from "react-cool-onclickoutside";
 
 const SmoothScrollLink = ({ to, children, isActive, setActiveSection, ...props }) => {
@@ -22,7 +22,7 @@ const SmoothScrollLink = ({ to, children, isActive, setActiveSection, ...props }
     }
   };
 
-  return (
+  return to.startsWith("#") ? (
     <a
       href={to || "#"}
       onClick={handleClick}
@@ -31,6 +31,14 @@ const SmoothScrollLink = ({ to, children, isActive, setActiveSection, ...props }
     >
       {children}
     </a>
+  ) : (
+    <RouterLink
+      to={to}
+      className={`nav-link ${isActive ? "active" : ""}`}
+      {...props}
+    >
+      {children}
+    </RouterLink>
   );
 };
 
