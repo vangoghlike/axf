@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from '../src/pages/home';
 import Home1 from '../src/pages/home1';
@@ -67,10 +67,10 @@ function App() {
   return (
     <HelmetProvider>
       <div>
-        <BrowserRouter>
+        <HashRouter>
           <ScrollToTop />
           <Navigation />
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </HelmetProvider>
   );

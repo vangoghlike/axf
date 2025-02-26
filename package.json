@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -61,7 +61,9 @@
     "@babel/plugin-transform-numeric-separator": "^7.25.9",
     "@babel/plugin-transform-private-methods": "^7.25.9",
     "@babel/plugin-transform-private-property-in-object": "^7.25.9",
+    "@babel/plugin-transform-runtime": "^7.26.6",
     "@eslint/config-array": "^0.19.2",
-    "@eslint/object-schema": "^2.1.6"
+    "@eslint/object-schema": "^2.1.6",
+    "cross-env": "^7.0.3"
   }
 }
